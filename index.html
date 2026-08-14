@@ -40,22 +40,47 @@
 
     <header class="fixed inset-x-0 top-0 z-50 bg-zinc-950/90 backdrop-blur border-b border-zinc-900">
         <nav class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+
             <a href="#hero" class="text-2xl font-bold">
                 <span class="text-white">Ash</span><span class="text-orange-500">win</span>
             </a>
 
-            <ul class="hidden md:flex gap-8 text-zinc-400">
-                <li><a href="#services" class="hover:text-white transition">Services</a></li>
-                <li><a href="#work" class="hover:text-white transition">Work</a></li>
-                <li><a href="#about" class="hover:text-white transition">About</a></li>
-                <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
-            </ul>
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8">
+                <ul class="flex gap-8 text-zinc-400">
+                    <li><a href="#services" class="hover:text-white transition">Services</a></li>
+                    <li><a href="#work" class="hover:text-white transition">Work</a></li>
+                    <li><a href="#about" class="hover:text-white transition">About</a></li>
+                    <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                </ul>
 
-            <a href="#contact"
-               class="hidden md:inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white px-6 py-3 rounded-full font-medium transition duration-300">
-                Hire Me
-            </a>
+                <a href="#contact"
+                   class="bg-orange-500 hover:bg-orange-400 text-white px-6 py-3 rounded-full font-medium transition duration-300">
+                    Hire Me
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-white text-3xl">
+                ☰
+            </button>
+
         </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-zinc-900 border-t border-zinc-800">
+            <a href="#services" class="block px-6 py-4 text-zinc-300 hover:bg-zinc-800">Services</a>
+            <a href="#work" class="block px-6 py-4 text-zinc-300 hover:bg-zinc-800">Work</a>
+            <a href="#about" class="block px-6 py-4 text-zinc-300 hover:bg-zinc-800">About</a>
+            <a href="#contact" class="block px-6 py-4 text-zinc-300 hover:bg-zinc-800">Contact</a>
+
+            <div class="p-6">
+                <a href="#contact"
+                   class="block text-center bg-orange-500 hover:bg-orange-400 text-white px-6 py-3 rounded-full font-medium transition duration-300">
+                    Hire Me
+                </a>
+            </div>
+        </div>
     </header>
 
     <section id="hero" class="min-h-screen flex items-center pt-24 md:pt-20 bg-zinc-950 relative overflow-hidden">
@@ -539,3 +564,20 @@
 
     </div>
 </section>
+
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // Toggle menu
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close menu when any menu item is clicked
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+</script>
