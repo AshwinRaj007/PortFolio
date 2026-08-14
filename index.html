@@ -1,40 +1,106 @@
-﻿@{
-    ViewData["Title"] = "Home";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+﻿<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ashwin Portfolio</title>
 
-<!-- Header -->
-<header class="fixed inset-x-0 top-0 z-50 bg-zinc-950/90 backdrop-blur border-b border-zinc-900">
-    <nav class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-        <a href="#hero" class="text-2xl font-bold">
-            <span class="text-white">Ash</span><span class="text-orange-500">win</span>
-        </a>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-        <ul class="hidden md:flex gap-8 text-zinc-400">
-            <li><a href="#services" class="hover:text-white transition">Services</a></li>
-            <li><a href="#work" class="hover:text-white transition">Work</a></li>
-            <li><a href="#about" class="hover:text-white transition">About</a></li>
-            <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
-        </ul>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#FF6B2B'
+                    }
+                }
+            }
+        }
+    </script>
 
-        <a href="#contact"
-           class="hidden md:inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white px-6 py-3 rounded-full font-medium transition duration-300">
-            Hire Me
-            <svg xmlns="http://www.w3.org/2000/svg"
-                 class="w-5 h-5"
-                 fill="none"
-                 viewBox="0 0 24 24"
-                 stroke="currentColor">
-                <path stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-        </a>
-    </nav>
-</header>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
-<!-- Hero -->
+    <style>
+        body {
+            margin: 0;
+            background: #09090b;
+            color: white;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        h1, h2, h3 {
+            font-family: 'PT Sans', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-zinc-950 text-white">
+
+    <header class="fixed inset-x-0 top-0 z-50 bg-zinc-950/90 backdrop-blur border-b border-zinc-900">
+        <nav class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#hero" class="text-2xl font-bold">
+                <span class="text-white">Ash</span><span class="text-orange-500">win</span>
+            </a>
+
+            <ul class="hidden md:flex gap-8 text-zinc-400">
+                <li><a href="#services" class="hover:text-white transition">Services</a></li>
+                <li><a href="#work" class="hover:text-white transition">Work</a></li>
+                <li><a href="#about" class="hover:text-white transition">About</a></li>
+                <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+            </ul>
+
+            <a href="#contact"
+               class="hidden md:inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white px-6 py-3 rounded-full font-medium transition duration-300">
+                Hire Me
+            </a>
+        </nav>
+    </header>
+
+    <section id="hero" class="min-h-screen flex items-center pt-24 md:pt-20 bg-zinc-950 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-5 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+
+            <div class="flex justify-center order-1 md:order-2">
+                <div class="relative w-64 h-80 sm:w-72 sm:h-96 md:w-80 md:h-96 rounded-3xl overflow-hidden shadow-2xl">
+                    <img src="images/ProfileImage.jpeg" alt="Ashwin M P" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <div class="text-center md:text-left order-2 md:order-1">
+                <p class="text-orange-500 uppercase tracking-[0.25em] text-xs sm:text-sm mb-4">
+                    Available for work
+                </p>
+
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight mb-6 text-white">
+                    Hi, I'm <span class="text-orange-500">Ashwin</span>
+                </h1>
+
+                <p class="text-zinc-400 text-base sm:text-lg md:text-xl leading-relaxed mb-8 max-w-xl mx-auto md:mx-0">
+                    Full-Stack .NET Developer with 4+ years of experience in ASP.NET Core,
+                    MVC, SQL Server, REST APIs, and enterprise application development.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#work"
+                       class="bg-white text-zinc-900 px-8 py-4 rounded-full font-semibold text-center hover:bg-zinc-200 transition">
+                        View My Work
+                    </a>
+
+                    <a href="#contact"
+                       class="border border-zinc-700 px-8 py-4 rounded-full text-white text-center hover:border-white transition">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
+
+@* <!-- Hero -->
 <section id="hero" class="min-h-screen flex items-center pt-24 md:pt-20 bg-zinc-950 relative overflow-hidden">
 
     <div class="absolute top-1/4 right-0 w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 bg-orange-500/10 rounded-full blur-3xl"></div>
@@ -46,7 +112,7 @@
 
             <div class="relative w-64 h-80 sm:w-72 sm:h-96 md:w-80 md:h-96 rounded-3xl overflow-hidden shadow-2xl">
 
-                <img src="~/images/ProfileImage.jpeg" alt="Ashwin M P" class="w-full h-full object-cover" />
+                <img src="images/ProfileImage.jpeg" alt="Ashwin M P" class="w-full h-full object-cover" />
 
             </div>
 
@@ -107,7 +173,7 @@
 
     </div>
 
-</section>
+</section> *@
 
 <!-- Services -->
 <section id="services" class="py-24 bg-zinc-900/40">
@@ -198,7 +264,7 @@
             <!-- Project 1 -->
             <div class="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500 transition duration-300">
 
-                <img src="~/images/project1.jpg"
+                <img src="images/project1.jpg"
                      alt="ELEMENTIQ ERP Platform"
                      class="w-full h-64 object-cover" />
 
@@ -235,7 +301,7 @@
             <!-- Project 2 -->
             <div class="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500 transition duration-300">
 
-                <img src="~/images/project2.jpg"
+                <img src="images/project2.jpg"
                      alt="PharMerica Pharmacy Management System"
                      class="w-full h-64 object-cover" />
 
@@ -272,7 +338,7 @@
             <!-- Project 3 -->
             <div class="bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden hover:border-orange-500 transition duration-300 md:col-span-2">
 
-                <img src="~/images/project3.jpg"
+                <img src="images/project3.jpg"
                      alt="Gas Malaysia Utility Systems"
                      class="w-full h-72 object-cover" />
 
@@ -322,7 +388,7 @@
 
                 <div class="relative w-full max-w-md">
 
-                    <img src="~/images/ProfileImage.jpeg"
+                    <img src="images/ProfileImage.jpeg"
                          alt="Ashwin M P"
                          class="w-full rounded-3xl shadow-2xl object-cover" />
 
@@ -462,7 +528,7 @@
             </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-10">
+        <div class="grid md:grid-cols-2 gap-10" style="margin-left: 345px;">
 
             <!-- Contact Info -->
             <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
@@ -548,7 +614,7 @@
             </div>
 
             <!-- Contact Form -->
-            <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+            <!--<div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
 
                 <h3 class="text-3xl font-bold text-white mb-6">
                     Send a message
@@ -561,8 +627,7 @@
                 </div>
                 }
 
-                <form action="@Url.Action(" Contact", "Home" )" method="post" class="space-y-6">
-                    @Html.AntiForgeryToken()
+                <form action="https://formspree.io/f/your_form_id" method="POST" class="space-y-6">
                     <div>
                         <label class="block text-zinc-400 mb-2">Full Name</label>
                         <input type="text"
@@ -605,7 +670,7 @@
 
                 </form>
 
-            </div>
+            </div>-->
 
         </div>
 
